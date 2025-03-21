@@ -1,9 +1,10 @@
 .sidebar-container {
     display: flex;
     flex-direction: column;
-    width: 20%;
+    width: 300px;
     min-height: 100vh;
     background: black;
+    flex-shrink: 0;
 }
 
 .sidebar-header {
@@ -71,4 +72,11 @@
 
 .sidebar-items.open {
     max-height: 1000px;
+}
+
+@media (max-width: 799px) {
+    .sidebar-container {
+        position: absolute;
+        left: -300px;
+    }
 }

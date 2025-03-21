@@ -13,10 +13,14 @@ const LessonContent = () => {
   }
 
   return (
-    <div>
-      <h2>{lesson.title}</h2>
-      <p>{lesson.content}</p>
-    </div>
+    <>
+      <div className="lesson-title">
+        <h2>{lesson.title}</h2>
+      </div>
+      <div className="lesson-body">
+        <p>{lesson.content}</p>
+      </div>
+    </>
   );
 };
 

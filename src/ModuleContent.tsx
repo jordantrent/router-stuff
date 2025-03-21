@@ -18,10 +18,13 @@ function ModuleContent() {
     : undefined;
 
   return (
-    <div>
-      <h1>{module.title}</h1>
-      <Outlet context={lesson} />
-    </div>
+    <>
+      <div className="module-header">{module.title}</div>
+      <div className="module-content">
+        <hr />
+        <Outlet context={lesson} />
+      </div>
+    </>
   );
 }
 

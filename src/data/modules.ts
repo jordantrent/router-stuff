@@ -18,7 +18,8 @@ export const modules: Module[] = [
       {
         id: "11",
         title: "What is TypeScript?",
-        content: "Introduction to TypeScript and its benefits.",
+        content:
+          "TypeScript is a statically typed superset of JavaScript that was developed by Microsoft. It enhances JavaScript by adding optional static typing, classes, interfaces, and other advanced features, making it an ideal choice for developers working on large-scale applications. TypeScript is fully compatible with JavaScript, meaning any valid JavaScript code is also valid TypeScript code. However, TypeScript introduces a robust type system that allows developers to define types for variables, function parameters, and return values, ensuring better error detection at compile time.",
       },
       {
         id: "12",

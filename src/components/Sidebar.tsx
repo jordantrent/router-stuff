@@ -1,5 +1,5 @@
 import "./sidebar.css";
-import { Dropdown } from "./dropdown.tsx";
+import { Dropdown } from "./Dropdown.tsx";
 import { modules } from "../data/modules.ts";
 
 export const Sidebar = () => {
