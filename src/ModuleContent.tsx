@@ -1,8 +1,15 @@
 import { useParams } from "react-router";
 import { modules } from "./data/modules";
-import { Outlet } from "react-router";
+import { Outlet, useOutletContext } from "react-router";
+import { MoveLeft, MoveRight, Dot } from "lucide-react";
 
 function ModuleContent() {
+  const { onMobileMenuClick, menuVisible, isMobile } = useOutletContext<{
+    onMobileMenuClick: () => void;
+    menuVisible: boolean;
+    isMobile: boolean;
+  }>();
+
   const { moduleId, lessonId } = useParams<{
     moduleId: string;
     lessonId?: string;
@@ -19,7 +26,16 @@ function ModuleContent() {
 
   return (
     <>
-      <div className="module-header">{module.title}</div>
+      <div className="module-header">
+        {isMobile ? (
+          <Dot />
+        ) : (
+          <button className="menu-button" onClick={onMobileMenuClick}>
+            {menuVisible ? <MoveRight /> : <MoveLeft />}
+          </button>
+        )}
+        {module.title}
+      </div>
       <div className="module-content">
         <hr />
         <Outlet context={lesson} />

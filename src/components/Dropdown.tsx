@@ -18,19 +18,20 @@ type Module = {
 interface DropdownProps {
   module: Module;
   lessons: Lesson[];
+  onClick: () => void;
 }
 
-export const Dropdown = ({ module, lessons }: DropdownProps) => {
+export const Dropdown = ({ module, lessons, onClick }: DropdownProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const navigate = useNavigate();
 
-  const onHeaderClick = (moduleId: string) => {
+  const onHeaderClick = () => {
     setIsOpen((prev) => !prev);
-    navigate(`/modules/${moduleId}`);
   };
 
   const onLessonClick = (moduleId: string, lessonId: string) => {
     navigate(`/modules/${moduleId}/lessons/${lessonId}`);
+    onClick();
   };
 
   return (
@@ -38,7 +39,7 @@ export const Dropdown = ({ module, lessons }: DropdownProps) => {
       <div className="sidebar-header">
         <button
           className="sidebar-header-button"
-          onClick={() => onHeaderClick(module.id)}
+          onClick={() => onHeaderClick()}
         >
           {module.title}
         </button>

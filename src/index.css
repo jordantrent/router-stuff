@@ -75,7 +75,7 @@ button:focus-visible {
 
 .module-header {
     display: flex;
-    justify-content: end;
+    justify-content: space-between;
     padding-top: 25px;
 }
 
@@ -87,17 +87,20 @@ button:focus-visible {
     border-top-left-radius: 25px;
     background-color: #242424;
     width: 100%;
+    overflow: auto;
 }
 
 .mobile-topbar-container {
+    position: fixed;
     width: 100vw;
     background-color: black;
     display: none;
+    top: 0;
 }
 
 @media (max-width: 799px) {
     .mobile-topbar-container {
-        display: block;
+        display: flex;
     }
 
     .module-header {
@@ -105,13 +108,21 @@ button:focus-visible {
     }
 
     .page-content {
+        padding-top: 30px;
         border-top-left-radius: 0;
     }
 
-    .sidebar-container {
+    .sidebar-container-mobile {
         position: fixed;
+        display: flex;
         left: -300px;
         transition: left 0.3s ease-in-out;
+        flex-direction: column;
+        width: 300px;
+        min-height: 100vh;
+        background-color: black;
+        flex-shrink: 0;
+        top: 25px;
     }
 
     .sidebar-container-show {
@@ -124,5 +135,6 @@ button:focus-visible {
         flex-shrink: 0;
         transition: left 0.3s ease-in-out;
         left: 0;
+        top: 25px;
     }
 }

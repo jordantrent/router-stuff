@@ -17,9 +17,13 @@ function App() {
     setMenuVisible((prev) => !prev);
   };
 
-  const sidebarStyle = menuVisible
-    ? "sidebar-container"
+  const sidebarStyleMobile = menuVisible
+    ? "sidebar-container-mobile"
     : "sidebar-container-show";
+
+  const sidebarStyle = menuVisible
+    ? "sidebar-container-hidden"
+    : "sidebar-container";
 
   return (
     <>
@@ -27,11 +31,11 @@ function App() {
         <MobileTopBar onClick={onMobileMenuClick} />
       </div>
       <div className="app-container">
-        <div className={isMobile ? sidebarStyle : "sidebar-container"}>
-          <Sidebar />
+        <div className={isMobile ? sidebarStyleMobile : sidebarStyle}>
+          <Sidebar onClick={onMobileMenuClick} />
         </div>
         <div className="page-content">
-          <Outlet />
+          <Outlet context={{ onMobileMenuClick, menuVisible, isMobile }} />
         </div>
       </div>
     </>

@@ -5,13 +5,24 @@
     min-height: 100vh;
     background-color: black;
     flex-shrink: 0;
-    transition: left 0.3s ease-in-out;
+    transition: margin-left 0.3s ease-in-out;
+    margin-left: 0;
+}
+
+.sidebar-container-hidden {
+    margin-left: -300px;
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    min-height: 100vh;
+    background-color: black;
+    flex-shrink: 0;
+    transition: margin-left 0.3s ease-in-out;
 }
 
 .sidebar-header {
     display: flex;
     flex-direction: row;
-    position: relative;
     max-width: 100%;
     background-color: transparent;
     align-items: center;
