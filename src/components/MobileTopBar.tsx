@@ -1,11 +1,17 @@
 import { Menu } from "lucide-react";
 
-export const MobileTopBar = () => {
+interface MobileTopBarProps {
+  onClick: () => void;
+}
+
+export const MobileTopBar = ({ onClick }: MobileTopBarProps) => {
+  const handleClick = () => {
+    onClick();
+  };
+
   return (
-    <div className="mobile-topbar-container">
-      <button className="menu-button">
-        <Menu />
-      </button>
-    </div>
+    <button className="menu-button" onClick={handleClick}>
+      <Menu />
+    </button>
   );
 };

@@ -3,8 +3,9 @@
     flex-direction: column;
     width: 300px;
     min-height: 100vh;
-    background: black;
+    background-color: black;
     flex-shrink: 0;
+    transition: left 0.3s ease-in-out;
 }
 
 .sidebar-header {
@@ -12,7 +13,7 @@
     flex-direction: row;
     position: relative;
     max-width: 100%;
-    background: transparent;
+    background-color: transparent;
     align-items: center;
 }
 
@@ -72,11 +73,4 @@
 
 .sidebar-items.open {
     max-height: 1000px;
-}
-
-@media (max-width: 799px) {
-    .sidebar-container {
-        position: absolute;
-        left: -300px;
-    }
 }

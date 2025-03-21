@@ -107,4 +107,21 @@ button:focus-visible {
     .page-content {
         border-top-left-radius: 0;
     }
+
+    .sidebar-container {
+        position: fixed;
+        left: -300px;
+        transition: left 0.3s ease-in-out;
+    }
+
+    .sidebar-container-show {
+        position: fixed;
+        display: flex;
+        flex-direction: column;
+        width: 300px;
+        min-height: 100vh;
+        background-color: black;
+        flex-shrink: 0;
+        transition: left 0.3s ease-in-out;
+    }
 }
