@@ -4,8 +4,8 @@ import { Outlet, useOutletContext } from "react-router";
 import { MoveLeft, MoveRight, Dot } from "lucide-react";
 
 function ModuleContent() {
-  const { onMobileMenuClick, menuVisible, isMobile } = useOutletContext<{
-    onMobileMenuClick: () => void;
+  const { onPageExpandClick, menuVisible, isMobile } = useOutletContext<{
+    onPageExpandClick: () => void;
     menuVisible: boolean;
     isMobile: boolean;
   }>();
@@ -30,7 +30,7 @@ function ModuleContent() {
         {isMobile ? (
           <Dot />
         ) : (
-          <button className="menu-button" onClick={onMobileMenuClick}>
+          <button className="menu-button" onClick={onPageExpandClick}>
             {menuVisible ? <MoveRight /> : <MoveLeft />}
           </button>
         )}

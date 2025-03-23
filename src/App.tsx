@@ -14,6 +14,12 @@ function App() {
   }, []);
 
   const onMobileMenuClick = () => {
+    if (isMobile) {
+      setMenuVisible((prev) => !prev);
+    }
+  };
+
+  const onPageExpandClick = () => {
     setMenuVisible((prev) => !prev);
   };
 
@@ -35,7 +41,7 @@ function App() {
           <Sidebar onClick={onMobileMenuClick} />
         </div>
         <div className="page-content">
-          <Outlet context={{ onMobileMenuClick, menuVisible, isMobile }} />
+          <Outlet context={{ onPageExpandClick, menuVisible, isMobile }} />
         </div>
       </div>
     </>
